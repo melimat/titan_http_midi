@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<avolites.macros>
+     
+    <!-- January 2019, Sebastian Beutel -->
+    <!-- useful to trigger the tap for BPM Masters -->
+     
+      <macro id="Avolites.Macros.TapBPM1" name="Tap BPM 1">
+        <sequence>
+          <step>Masters.TapTempo(1612, Math.GetCurrentTimeStamp())</step>
+        </sequence>
+      </macro>
+     
+      <macro id="Avolites.Macros.TapBPM2" name="Tap BPM 2">
+        <sequence>
+          <step>Masters.TapTempo(1616, Math.GetCurrentTimeStamp())</step>
+        </sequence>
+      </macro>
+     
+      <macro id="Avolites.Macros.TapBPM3" name="Tap BPM 3">
+        <sequence>
+          <step>Masters.TapTempo(1620, Math.GetCurrentTimeStamp())</step>
+        </sequence>
+      </macro>
+     
+      <macro id="Avolites.Macros.TapBPM4" name="Tap BPM 4">
+        <sequence>
+          <step>Masters.TapTempo(1624, Math.GetCurrentTimeStamp())</step>
+        </sequence>
+      </macro>
+     
+</avolites.macros>
+

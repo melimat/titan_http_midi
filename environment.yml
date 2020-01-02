@@ -1,0 +1,9 @@
+name: midicontrol
+
+dependencies:
+  - python=3.6
+  - pip:
+    - python-rtmidi
+    - mido
+    - pyautogui
+    - requests
