@@ -40,7 +40,7 @@ for i in range(60):
                 type_of_handle = str(eachelement["properties"][1]["Value"])
         else:
             type_of_handle = str(eachelement["type"])
-        print("Legend: {0} ; Page: {1} ; Index: {2} ; Type: {3} ; TitanID: {4}".format(legend, page, index, type_of_handle, titan_id))
+        #print("Legend: {0} ; Page: {1} ; Index: {2} ; Type: {3} ; TitanID: {4}".format(legend, page, index, type_of_handle, titan_id))
         handles_dict[page, index] = {"id": titan_id, "type": type_of_handle, "swop" : False, "flash" : False}
 
 def convert_value(raw_val, max_val):
@@ -48,7 +48,7 @@ def convert_value(raw_val, max_val):
 
 def fader_handler(page, index_of_handle, raw_value):
     properties = handles_dict[page, index_of_handle]
-    print(properties)
+    #print(properties)
     if (properties["type"] in masters_dict.keys()):
         value = convert_value(raw_value, masters_dict[properties["type"]])
         requests.get("http://" + ip + '/titan/script/Masters/SetMaster?titanId=' + str(properties["id"]) + '&value=' + str(value))
@@ -67,13 +67,13 @@ def swop_handler(page, index_of_control):
 
 def flash_handler(page, index_of_control):
     properties = handles_dict[page, index_of_control - 48]
-    print(properties)
+    #print(properties)
     if ((properties["type"] == "cueListHandle") and (properties["flash"] == False)):
-        print("tap")
+        #print("tap")
         requests.get("http://" + ip + "/titan/script/CueLists/CutNextCueToLive?titanId=" + str(properties["id"]))
         properties["flash"] = True
     elif ((properties["type"] == "cueListHandle") and (properties["flash"] == True)):
-        print("nothing")
+        #print("nothing")
         properties["flash"] = False
     else:
         if (properties["flash"] == False):
